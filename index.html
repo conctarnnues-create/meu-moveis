@@ -82,6 +82,9 @@ form{background:#17130fd9;border:1px solid var(--line);padding:clamp(1.4rem,3vw,
 label,legend{display:block;font:500 .78rem 'Barlow Condensed',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--wood2);margin-bottom:.4rem}
 input,select,textarea{width:100%;background:#100d0a;border:1px solid var(--line);color:var(--ivory);font:400 1rem 'Manrope',sans-serif;padding:.85rem 1rem;border-radius:0;transition:border-color .3s}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--wood)}
+label[for=tipo]{font:600 1.7rem/1.1 'Cormorant Garamond',Georgia,serif;letter-spacing:.01em;text-transform:none;color:var(--tape);margin-bottom:.8rem}
+#tipo{border:2px solid var(--tape);background-color:#1d1710;font-weight:600;font-size:1.1rem;box-shadow:0 0 0 4px #e9b8242e,0 0 24px #e9b82433}
+#tipo:focus{border-color:var(--tape);box-shadow:0 0 0 5px #e9b82452,0 0 30px #e9b82459}
 select{appearance:none;background-image:linear-gradient(45deg,#0000 50%,var(--wood2) 50%),linear-gradient(135deg,var(--wood2) 50%,#0000 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px;background-repeat:no-repeat}
 textarea{resize:vertical;min-height:110px}
 .row{display:grid;gap:1rem;margin-bottom:1.2rem}.r3{grid-template-columns:repeat(3,1fr)}.r2{grid-template-columns:1fr 1fr}
@@ -302,8 +305,8 @@ body.ckon .wa{bottom:calc(120px + env(safe-area-inset-bottom,0px))}
   f.addEventListener('submit',function(e){
     e.preventDefault();
     if(!f.reportValidity())return;
-    var url=WHATS?'https://wa.me/'+WHATS+'?text='+encodeURIComponent(msg()):'mailto:tjmmarcenari630@gmail.com?subject='+encodeURIComponent('Orçamento pelo site')+'&body='+encodeURIComponent(msg());
-    if(WHATS){var w=window.open(url,'_blank','noopener');if(!w)location.href=url}else location.href=url;
+    var url='https://wa.me/'+WHATS+'?text='+encodeURIComponent(msg());
+    var w=window.open(url,'_blank','noopener');if(!w)location.href=url;
   });
 
   /* esconde o botão flutuante quando aparece a escrita "Orçamento" (e segue escondido abaixo) */
